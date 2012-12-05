@@ -5,7 +5,7 @@
  * Description: Adds an Youtube username field to the user profile page and allow you to show your videos on your website.
  * Author: Jayjdk
  * Author URI: http://jayj.dk
- * Version: 3.0.0
+ * Version: 3.0.1
  * License: GPLv2 or later
  */
 
@@ -109,6 +109,6 @@ class Youtube_Profile_Field {
 	}
 }
 
-new Youtube_Profile_Field();
+$youtube_profile_field = new Youtube_Profile_Field();
 
 ?>

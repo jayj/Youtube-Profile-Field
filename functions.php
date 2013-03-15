@@ -66,7 +66,7 @@ function ypf_get_video( $options ) {
 		$rss_items = $rss->get_items( 0, $maxitems );
 	endif;
 
-	if ( $maxitems != 0 ) :
+	if ( isset( $maxitems ) && $maxitems != 0 ) :
 
 		global $wp_embed;
 

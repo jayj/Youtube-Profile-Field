@@ -34,7 +34,7 @@ class Youtube_Profile_Field {
 		register_activation_hook( __FILE__, array( &$this, 'activation' ) );
 
 		/* Register activation hook. */
-		register_uninstall_hook( __FILE__, array( &$this, 'uninstall' ) );
+		register_uninstall_hook( __FILE__, 'uninstall' );
 	}
 
 	/**

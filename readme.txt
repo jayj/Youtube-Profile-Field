@@ -3,7 +3,7 @@ Contributors: Jayjdk
 Donate link: none
 Tags: youtube, video, rss, feed, profile, field, username, user, shortcode, oembed
 Requires at least: 3.1
-Tested up to: 3.5
+Tested up to: 3.6
 Stable tag: trunk
 
 Adds an additional field to the user profile page and allows you to show your videos on your website.
@@ -91,6 +91,9 @@ if ( function_exists( 'ypf_show_video' ) ) {
 2. The profile page with the Youtube username field
 
 == Changelog ==
+
+= 3.0.2 =
+* Bug fixes
 
 = 3.0 =
 * The videos are now embedded using oEmbed which means that WordPress can cache them

@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: Youtube Profile Field
- * Plugin URI: http://jayj.dk/template/plugins/youtube-profile-field/
+ * Plugin URI: http://jayj.dk/plugins/youtube-profile-field/
  * Description: Adds an Youtube username field to the user profile page and allow you to show your videos on your website.
- * Author: Jayjdk
+ * Author: Jesper Johansen
  * Author URI: http://jayj.dk
  * Version: 3.0.3
  * License: GPLv2 or later

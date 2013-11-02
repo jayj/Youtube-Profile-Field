@@ -90,19 +90,15 @@ function ypf_get_video( $options ) {
 
 			<div class="youtube-video">
 				<?php
-					/* Get the headingStart option */
-					if ( ! empty( $options['headingStart'] ) ) :
-						echo html_entity_decode( $options['headingStart'] );
-				?>
-
-					<a href="<?php echo esc_url( $url ); ?>"><?php echo $title; ?></a>
-
-				<?php
-					endif;
-
-					/* Get the headingEnd option */
-					if ( ! empty( $options['headingEnd'] ) )
-						echo html_entity_decode( $options['headingEnd'] );
+					/* Get the video title. */
+					if ( ! empty( $options['headingStart'] ) ) {
+						printf( '%s <a href="%s">%s</a> %s',
+							html_entity_decode( $options['headingStart'] ),
+							esc_url( $url ),
+							$title,
+							( ! empty( $options['headingEnd'] ) ) ? html_entity_decode( $options['headingEnd'] ) : ''
+						);
+					}
 				?>
 
 				<?php

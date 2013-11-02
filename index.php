@@ -14,7 +14,7 @@
 class Youtube_Profile_Field {
 
 	/**
-	 * PHP5 constructor method.
+	 * Constructor method.
 	 *
 	 * @since 3.0.0
 	 */
@@ -40,34 +40,29 @@ class Youtube_Profile_Field {
 	}
 
 	/**
-	 * Defines constants used by the plugin.
+	 * Defines constants used by the plugin
 	 *
 	 * @since 3.0.0
 	 */
 	public function constants() {
-
-		/* Set constant path to the Youtube Profile Field plugin directory. */
 		define( 'YPF_DIR', trailingslashit( plugin_dir_path( __FILE__ ) ) );
 	}
 
 	/**
-	 * Loads the initial files needed by the plugin.
+	 * Loads the initial files needed by the plugin
 	 *
 	 * @since 3.0.0
 	 */
 	public function includes() {
-
 		require_once( YPF_DIR . 'functions.php' );
 	}
 
 	/**
-	 * Loads the translation files.
+	 * Loads the translation files
 	 *
 	 * @since 3.0.0
 	 */
 	public function i18n() {
-
-		/* Load the translation of the plugin. */
 		load_plugin_textdomain( 'youtube-profile-field', false, YPF_DIR . 'languages' );
 	}
 
@@ -77,15 +72,13 @@ class Youtube_Profile_Field {
 	 * @since 3.0.0
 	 */
 	public function admin() {
-
-		/* Only load files if in the WordPress admin. */
 		if ( is_admin() ) {
 			require_once( YPF_DIR . 'admin.php' );
 		}
 	}
 
 	/**
-	 * Method that runs only when the plugin is activated.
+	 * Method that runs only when the plugin is activated
 	 *
 	 * @since 3.0.0
 	 */
@@ -102,7 +95,7 @@ class Youtube_Profile_Field {
 	}
 
 	/**
-	 * Method that runs only when the plugin is uninstall.
+	 * Method that runs only when the plugin is uninstalled
 	 *
 	 * @since 3.0.0
 	 */

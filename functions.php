@@ -1,7 +1,6 @@
 <?php
-
 /**
- * Function to show the videos.
+ * Show the video
  *
  * @since 2.0.2
  * @uses ypf_get_video() Get the requested videos
@@ -20,51 +19,53 @@ function ypf_show_video( $args = array() ) {
 			$args['user_id'] = func_get_arg(1);
 	}
 
-	/* Get default options */
+	/* Get default options. */
 	$defaults = get_option( 'ypf_options' );
 	$defaults['user_id'] = get_the_author_meta( 'ID' );
 
-	/* Merge the parameters and default options */
+	/* Merge the parameters and default options. */
 	$options = wp_parse_args( $args, $defaults );
 
 	return ypf_get_video( $options );
 }
 
 /**
- * Get the requested videos.
+ * Get the requested video
  *
  * @since 2.1.0
  * @param array	$options
  */
 function ypf_get_video( $options ) {
 
-	/* Get width and height */
+	/* Get width and height. */
 	$options['width']  = ypf_get_video_width( $options );
 	$options['height'] = ypf_get_video_height( $options );
 
-	/* Get the username */
+	/* Get the username. */
 	$username = get_the_author_meta( 'youtube', $options['user_id'] );
 
-	/**
-	 * Get the videos
+	/*
+	 * Get the videos from the Youtube user feed
 	 */
 	include_once( ABSPATH . WPINC . '/feed.php' );
 
 	$rss = fetch_feed( "http://gdata.youtube.com/feeds/base/users/{$username}/uploads?v=2" );
 
-	// Is count set to 0? (why would some one do that??)
-	if ( 0 === $options['count'] )
+	/* Is count set to 0? (why would some one do that??) */
+	if ( 0 === $options['count'] ) {
 		return;
+	}
 
-	// Is count set to all?
-	if ( 'all' == $options['count'] )
+	/* Is count set to all? */
+	if ( 'all' == $options['count'] ) {
 		$options['count'] = '0'; // 0 will return all items in the RSS feed
+	}
 
-	// Checks that the object is created correctly
-	if ( ! is_wp_error( $rss ) ) :
+	/* Checks that the object is created correctly. */
+	if ( ! is_wp_error( $rss ) ) {
 		$maxitems  = $rss->get_item_quantity( intval( $options['count'] ) );
 		$rss_items = $rss->get_items( 0, $maxitems );
-	endif;
+	}
 
 	if ( isset( $maxitems ) && $maxitems != 0 ) :
 
@@ -72,20 +73,19 @@ function ypf_get_video( $options ) {
 
 		ob_start();
 
-		/* Loop through each found video */
+		/* Loop through each found video. */
 		foreach ( $rss_items as $item ) :
 
-			/* Get video link */
-			$url = $item->get_permalink();
-
-			/* Get title */
+			/* Get video info. */
+			$url   = $item->get_permalink();
 			$title = $item->get_title();
 
-			/* Get video ID */
-			if ( preg_match( '/(?<=video:).+/', $item->get_id(), $match ) )
+			/* Get video ID. */
+			if ( preg_match( '/(?<=video:).+/', $item->get_id(), $match ) ) {
 				$id = $match[0];
-			else
+			} else {
 				return __( 'Error: No video ID found.', 'youtube-profile-field' );
+			}
 	?>
 
 			<div class="youtube-video">
@@ -102,7 +102,7 @@ function ypf_get_video( $options ) {
 				?>
 
 				<?php
-					/* Embed the video through oEmbed */
+					/* Embed the video through oEmbed. */
 					echo $wp_embed->shortcode( array(
 						'width'  => $options['width'],
 						'height' => $options['height']
@@ -166,10 +166,10 @@ function ypf_get_video_height( $options ) {
  */
 function ypf_youtube_user_shortcode( $args ) {
 
-	/* Get default options */
+	/* Get default options. */
 	$defaults = get_option( 'ypf_options' );
 
-	/* Get shortcode attributes */
+	/* Get shortcode attributes. */
 	$args = shortcode_atts(
 		array(
 			'display' => $defaults['count'],
@@ -183,24 +183,26 @@ function ypf_youtube_user_shortcode( $args ) {
 		$args
 	);
 
-	// Rename display to count
-	if ( empty( $args['count'] ) )
+	/* Rename display to count. */
+	if ( empty( $args['count'] ) ) {
 		$args['count'] = $args['display'];
+	}
 
-	// Rename user to user_id
-	if ( empty( $args['user_id'] ) )
+	/* Rename user to user_id. */
+	if ( empty( $args['user_id'] ) ) {
 		$args['user_id'] = $args['user'];
+	}
 
-	unset($args['display'], $args['user']);
+	unset( $args['display'], $args['user'] );
 
 	/* Merge the parameters and default options */
 	$options = wp_parse_args( $args, $defaults );
 
-	/* There's an ID! Let's grab that single video */
+	/* There's an ID! Let's grab that single video. */
 	if ( ! empty( $args['id'] ) ) :
 
-		/* Get width and height */
-		$options['width'] = ypf_get_video_width( $options );
+		/* Get width and height. */
+		$options['width']  = ypf_get_video_width( $options );
 		$options['height'] = ypf_get_video_height( $options );
 
 		ob_start(); ?>
@@ -211,7 +213,7 @@ function ypf_youtube_user_shortcode( $args ) {
 
 				/* Embed the video through oEmbed */
 				echo $wp_embed->shortcode( array(
-					'width' => $options['width'],
+					'width'  => $options['width'],
 					'height' => $options['height']
 				), 'http://www.youtube.com/watch?v=' . $args['id'] );
 			?>
@@ -221,8 +223,8 @@ function ypf_youtube_user_shortcode( $args ) {
 		return ob_get_clean();
 	endif;
 
-	/**
-	 * Get the videos
+	/*
+	 * Grab videos from the user feed.
 	 */
 	return ypf_get_video( $options );
 }
@@ -230,16 +232,17 @@ function ypf_youtube_user_shortcode( $args ) {
 add_shortcode( 'youtube-user', 'ypf_youtube_user_shortcode' );
 
 /**
- * Create the Youtube profile field
+ * Create the Youtube Username profile field
  *
  * @since 1.0.0
  */
-function yfp_youtube_field( $contactmethods ) {
-		$contactmethods['youtube'] = __( 'Youtube username', 'youtube-profile-field' );
-		return $contactmethods;
+function ypf_youtube_contact_field( $contactmethods ) {
+	$contactmethods['youtube'] = __( 'Youtube username', 'youtube-profile-field' );
+
+	return $contactmethods;
 }
 
-add_filter( 'user_contactmethods', 'yfp_youtube_field' );
+add_filter( 'user_contactmethods', 'ypf_youtube_contact_field' );
 
 /**
  * Add a link to the settings
@@ -249,8 +252,9 @@ add_filter( 'user_contactmethods', 'yfp_youtube_field' );
 function ypf_plugin_action_links( $links, $file ) {
 	static $this_plugin;
 
-	if ( ! $this_plugin )
+	if ( ! $this_plugin ) {
 		$this_plugin = plugin_basename( __FILE__ );
+	}
 
 	if ( $file == $this_plugin ) {
 		$settings_link = '<a href="' . admin_url( 'options-general.php?page=youtube-profile-field' ) . '">' . __( 'Settings', 'youtube-profile-field' ) . '</a>';
@@ -263,7 +267,7 @@ function ypf_plugin_action_links( $links, $file ) {
 add_filter( 'plugin_action_links', 'ypf_plugin_action_links', 10, 2 );
 
 /**
- * Earlier versions of the plugin used the function 'show_video' - Let's not break them
+ * Earlier versions of the plugin used the function 'show_video' - Let's not break any thing
  */
 if ( ! function_exists( 'show_video' ) ) {
 	function show_video( $count = '', $userid ) {

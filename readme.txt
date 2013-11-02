@@ -83,6 +83,11 @@ if ( function_exists( 'ypf_show_video' ) ) {
 
 == Changelog ==
 
+= 3.0.3 =
+* Added Serbo-Croatian translation by [Borisa Djuraskovic](http://google.com).
+* Use 4:3 aspect ratio for videos (same as WordPress)
+* Tested with WordPress 3.7
+
 = 3.0.2 =
 * Bug fixes
 

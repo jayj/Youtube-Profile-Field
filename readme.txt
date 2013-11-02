@@ -1,6 +1,6 @@
 === Youtube Profile Field ===
 Contributors: Jayjdk
-Donate link: none
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XHKUSU26XBKEU
 Tags: youtube, video, rss, feed, profile, field, username, user, shortcode, oembed
 Requires at least: 3.1
 Tested up to: 3.6

@@ -63,7 +63,7 @@ class Youtube_Profile_Field {
 	 * @since 3.0.0
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'youtube-profile-field', false, YPF_DIR . 'languages' );
+		load_plugin_textdomain( 'youtube-profile-field', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 	/**

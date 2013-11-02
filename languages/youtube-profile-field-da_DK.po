@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Youtube Profile Field\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-29 22:41+0100\n"
+"POT-Creation-Date: 2013-11-02 22:02+0100\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Jesper J <kontakt@jayj.dk>\n"
+"Last-Translator: Jesper Johansen\n"
 "Language-Team: Jayjdk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,51 +16,52 @@ msgstr ""
 
 #: admin.php:12 admin.php:30
 msgid "Youtube Profile Field Options"
-msgstr "Youtube Profile Field opcije"
+msgstr "Youtube Profile Field indstillinger"
 
 #: admin.php:13
 msgid "Youtube Profile Field"
 msgstr "Youtube Profile Field"
 
-#: admin.php:54 functions.php:257
+#: admin.php:54 functions.php:260
 msgid "Settings"
-msgstr "Postavke"
+msgstr "Indstillinger"
 
 #: admin.php:61
 msgid "Videos to show"
-msgstr "Videi za prikaz"
+msgstr "Antal videoer der skal vises"
 
 #: admin.php:69
 msgid "Heading to titles"
-msgstr "Heading za naslove"
+msgstr "Overskrift til videoer"
 
 #: admin.php:77
 msgid "End heading"
-msgstr "Krajnji heading"
+msgstr "Slut overskrift"
 
 #: admin.php:85
 msgid "Width"
-msgstr "Širina"
+msgstr "Bredde"
 
 #: admin.php:93
 msgid "Height"
-msgstr "Visina"
+msgstr "Højde"
 
 #: admin.php:101
 msgid "Help"
-msgstr "Pomoć"
+msgstr "Hjælp"
 
 #: admin.php:128
 msgid ""
 "Number of videos you want to show (Can be overriden with a template tag or "
 "shortcode)"
 msgstr ""
-"Broj videa koje želite da pokažete (Može biti prepsan sa  template tagom "
-"skraćenice)"
+"Antal af videoer du vil vise (kan blive overskrevet med et template tag "
+"eller en shortcode)"
 
 #: admin.php:141
 msgid "<h3>, <p> or something else. Leave empty to hide titles"
-msgstr "<h3>, <p> ili nešto drugo. Ostaviti prazno da bi se sakrili naslovi"
+msgstr ""
+"<h3>, <p>, eller noget lignende. Efterlad den tom for at fjerne titlerne."
 
 #: admin.php:154
 msgid "</h3>, </p>"
@@ -71,26 +72,25 @@ msgid ""
 "If left blank, or 0, the width of the videos will default to your media "
 "settings."
 msgstr ""
-"Ako je levo prazno ili 0 širina videa će biti default vašim media postavkama."
+"Hvis tom, eller 0, vil bredden fra dine medie indstllinger blive brugt."
 
 #: admin.php:180
 msgid ""
 "If left blank, or 0, the height of the videos will be calculated using the "
 "width"
-msgstr ""
-"Ako je levo prazno ili 0 visina videa će biti default vašim media postavkama."
+msgstr "Hvis tom, 0, vil højden blive udregnet ved hjælp af bredden"
 
 #: admin.php:208
 msgid "Helpful video sizes:"
-msgstr "Pomoćne veličine videa:"
+msgstr "Hjælpsomme video størrelser:"
 
-#: functions.php:88
+#: functions.php:87
 msgid "Error: No video ID found."
-msgstr "Greška: ID videa nije pronadjen"
+msgstr "Fejl: Ingen video ID fundet."
 
-#: functions.php:239
+#: functions.php:240
 msgid "Youtube username"
-msgstr "Youtube korisničko ime"
+msgstr "Youtube brugernavn"
 
 #~ msgid "Use old embed code"
 #~ msgstr "Brug gammel embed kode"

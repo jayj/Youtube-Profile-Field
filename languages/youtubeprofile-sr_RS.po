@@ -1,0 +1,208 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Youtube Profile Field\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-29 22:41+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jesper J <kontakt@jayj.dk>\n"
+"Language-Team: Jayjdk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: admin.php:12 admin.php:30
+msgid "Youtube Profile Field Options"
+msgstr "Youtube Profile Field opcije"
+
+#: admin.php:13
+msgid "Youtube Profile Field"
+msgstr "Youtube Profile Field"
+
+#: admin.php:54 functions.php:257
+msgid "Settings"
+msgstr "Postavke"
+
+#: admin.php:61
+msgid "Videos to show"
+msgstr "Videi za prikaz"
+
+#: admin.php:69
+msgid "Heading to titles"
+msgstr "Heading za naslove"
+
+#: admin.php:77
+msgid "End heading"
+msgstr "Krajnji heading"
+
+#: admin.php:85
+msgid "Width"
+msgstr "Širina"
+
+#: admin.php:93
+msgid "Height"
+msgstr "Visina"
+
+#: admin.php:101
+msgid "Help"
+msgstr "Pomoć"
+
+#: admin.php:128
+msgid ""
+"Number of videos you want to show (Can be overriden with a template tag or "
+"shortcode)"
+msgstr ""
+"Broj videa koje želite da pokažete (Može biti prepsan sa  template tagom "
+"skraćenice)"
+
+#: admin.php:141
+msgid "<h3>, <p> or something else. Leave empty to hide titles"
+msgstr "<h3>, <p> ili nešto drugo. Ostaviti prazno da bi se sakrili naslovi"
+
+#: admin.php:154
+msgid "</h3>, </p>"
+msgstr "</h3>, </p>"
+
+#: admin.php:167
+msgid ""
+"If left blank, or 0, the width of the videos will default to your media "
+"settings."
+msgstr ""
+"Ako je levo prazno ili 0 širina videa će biti default vašim media postavkama."
+
+#: admin.php:180
+msgid ""
+"If left blank, or 0, the height of the videos will be calculated using the "
+"width"
+msgstr ""
+"Ako je levo prazno ili 0 visina videa će biti default vašim media postavkama."
+
+#: admin.php:208
+msgid "Helpful video sizes:"
+msgstr "Pomoćne veličine videa:"
+
+#: functions.php:88
+msgid "Error: No video ID found."
+msgstr "Greška: ID videa nije pronadjen"
+
+#: functions.php:239
+msgid "Youtube username"
+msgstr "Youtube korisničko ime"
+
+#~ msgid "Use old embed code"
+#~ msgstr "Brug gammel embed kode"
+
+#~ msgid ""
+#~ "There are two styles of embed codes that are available for YouTube "
+#~ "videos. The new embed code begins with \"&lt;iframe...\" and supports "
+#~ "both Flash and HTML5 video. The older style of embed code begins with "
+#~ "\"&lt;object...\" and only support Flash playback."
+#~ msgstr ""
+#~ "Der er to typer embed koder. Den nye embed kode begynder med  \"&lt;"
+#~ "iframe...\"  og understøtter både Flash og HTML video. Den gamle embed "
+#~ "kode begynder med  \"&lt;object...\"  og understøtter kun Flash."
+
+#~ msgid "<p>No videos where found.</p>"
+#~ msgstr "<p>Ingen videoer blev fundet.</p>"
+
+#~ msgid "The video could not be found"
+#~ msgstr "Videoen kunne ikke blive fundet."
+
+#~ msgid "Options"
+#~ msgstr "Indstillinger"
+
+#~ msgid "Width of the video"
+#~ msgstr "Bredde af videoen"
+
+#~ msgid "Youtube size: 560"
+#~ msgstr "Youtube størrelse: 560"
+
+#~ msgid "Height of the video"
+#~ msgstr "Højde af video"
+
+#~ msgid "Youtube size: 340"
+#~ msgstr "Youtube størrelse: 340"
+
+#~ msgid "&lt;/h3&gt;, &lt;/p&gt;"
+#~ msgstr "&lt;/h3&gt;, &lt;/p&gt;"
+
+#~ msgid "Save Changes"
+#~ msgstr "Gem ændringer"
+
+#~ msgid "How to use in template files"
+#~ msgstr "Brug i template filer"
+
+#~ msgid "It accept 2 parameters."
+#~ msgstr "Den accepterer 2 parametere"
+
+#~ msgid "Optional"
+#~ msgstr "Valgfri"
+
+#~ msgid ""
+#~ "Number of videos you want to show. Will override the one entered in the "
+#~ "options panel. \n"
+#~ "                    If not entered, will it use the one from the options "
+#~ "panel."
+#~ msgstr ""
+#~ "Antal videoer du vil vise. Vil overskrive det antal der er angivet på "
+#~ "indstillingssiden. \n"
+#~ "Hvis ikke udfyldt, vil den bruge den fra indstillingssiden"
+
+#~ msgid ""
+#~ "Choose want user you want to show videos from. You don't need to enter "
+#~ "one if you use the function inside the loop. \n"
+#~ "                    If you use it outside the loop you might want to "
+#~ "enter one (or it will use ID 1)."
+#~ msgstr ""
+#~ "Vælg den bruger du vil have vist videoer fra. Du behøver ikke at indtaste "
+#~ "ind, hvis du bruger funktionen inde i loop'et. \n"
+#~ "Hvis du bruger den udenfor loop'et, er det måske en god idé at indtaste "
+#~ "en (ellers vil den bruger ID 1)"
+
+#~ msgid "Example of usage"
+#~ msgstr "Eksempel af brug"
+
+#~ msgid ""
+#~ "That will show videos from User 2 and show the number of videos entered "
+#~ "in the options panel."
+#~ msgstr ""
+#~ "Det vil vise videoeren fra bruger 2 and vise det antal du har angivet på "
+#~ "indstillingssiden"
+
+#~ msgid "How to use in author.php"
+#~ msgstr "Brug i author.php"
+
+#~ msgid ""
+#~ "To get the ID of the current user on author.php, do you first need to <a "
+#~ "href=\"%s\">Setup Author Information</a>"
+#~ msgstr ""
+#~ "For at få ID'et af den nyværende bruger i author.php, bliver du først "
+#~ "nødt til at <a href=\"%s\">Indstille forfatter information</a>"
+
+#~ msgid "After that just use"
+#~ msgstr "Efter det, bare brug"
+
+#~ msgid "How to use in posts, pages and textwidgets"
+#~ msgstr "Brug i indlæg, sider og tekst widgets"
+
+#~ msgid ""
+#~ "You can use this shortcode if you want to display the videos in posts, "
+#~ "pages or text widgets."
+#~ msgstr ""
+#~ "Du kan bruge shortkoden, hvis du ønsker at vise videoer i indlæg, sider "
+#~ "eller i tekst widgets."
+
+#~ msgid "It will show 1 video. If you want to display more, just use"
+#~ msgstr "Det vil vise 1 video. Hvis du ønske at vise flere, brug"
+
+#~ msgid "3 is the number of videos"
+#~ msgstr "3 er antallet af videoer"
+
+#~ msgid "You can also show a specific video"
+#~ msgstr "Du kan også vise en bestemt video"
+
+#~ msgid "ql0kn-yI2OY is the video ID"
+#~ msgstr "ql0kn-yI2OY er videoens ID"

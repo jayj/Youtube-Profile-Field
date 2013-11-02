@@ -121,25 +121,25 @@ function ypf_get_video( $options ) {
 }
 
 /**
- * Get video width. Either from the database, the default embed width
+ * Get video width. Either from the options, the default embed width
  * or the theme content width
  *
  * @since 3.0.0
- * @param array $options Array with the database options
+ * @param array $options Array with the plugin options
  * @return int The width
  */
 function ypf_get_video_width( $options ) {
-	// Get default width from the media options or the theme $content_width
-	$default_width = ( get_option( 'embed_size_w' ) ) ? get_option( 'embed_size_w' ) : (int) $GLOBALS['content_width'];
 
-	if ( ! $options['width'] )
-		$options['width'] = $default_width;
+	/* No width, get the default. */
+	if ( ! $options['width'] ) {
+		$options['width'] = ( get_option( 'embed_size_w' ) ) ? get_option( 'embed_size_w' ) : (int) $GLOBALS['content_width'];
+	}
 
 	return $options['width'];
 }
 
 /**
- * Get video height. Either from the database, or based on the width
+ * Get video height. Either from the options, or based on the width
  * with the 16:9 aspect ratio
  *
  * @since 3.0.0
@@ -148,8 +148,11 @@ function ypf_get_video_width( $options ) {
  * @return int The height
  */
 function ypf_get_video_height( $options ) {
-	if ( ! $options['height'] )
-		$options['height'] = round( $options['width'] / ( apply_filters( 'youtube_profile_field_aspect_ratio', 16/9 ) ) ); // 16:9 aspect ratio
+
+	/* No height, generate it from the width. */
+	if ( ! $options['height'] ) {
+		$options['height'] = round( $options['width'] / ( apply_filters( 'youtube_profile_field_aspect_ratio', 4/3 ) ) ); // 4:3 aspect ratio
+	}
 
 	return $options['height'];
 }

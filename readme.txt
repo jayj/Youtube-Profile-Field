@@ -13,7 +13,7 @@ Adds an additional field to the user profile page and allows you to show your vi
 
 Youtube Profile Field allows you to show your latest Youtube videos on your blog. Just enter your Youtube username in the profile and you're ready to show your videos to the world!
 
-You can show your videos either by using a template tag or by using a shortcode, that you can use in posts, pages, and text widgets.
+Show your videos in your posts, pages, and text widgets using a shortcode, or in your theme files using the template tag.
 
 == Installation ==
 
@@ -22,30 +22,29 @@ You can show your videos either by using a template tag or by using a shortcode,
 3. Go to `Users > Your Profile` and enter your Youtube username in the field called "Youtube username" under "Contact Info"
 4. Optional: Go to the settings page `Settings > Youtube Profile Field` and change the settings to fit you.
 
-
 == Frequently Asked Questions ==
 
 = How do I use the shortcode? =
 
-The shortcode is: `[youtube-user]`
+The shortcode is: `&#91;youtube-user]`
 
 You can use these parameters:
 
-* count		- The number of videos you want to show. Ex: `[youtube-user count="2"]`
-* user_id	- The ID of the user you want to show videos from. Default is the post author. Ex:  `[youtube-user user="3"]`
+* count		- The number of videos you want to show. Ex: `&#91;youtube-user count="2"]`
+* user_id	- The ID of the user you want to show videos from. Default is the post author. Ex: `&#91;youtube-user user="3"]`
 * width 	- If you want a different width than the default
 * height	- If you want a different height than the default. If you leave it empty, the plugin will calculate a height using the width
-* ID 		- If you want to show a specific video you can use this. You **shouldn't** really use this since WordPress now supports oEmbed.
+* ID 		- If you want to show a specific video you can use this. You **shouldn't** use this since WordPress now supports oEmbed.
 
 = How do I use the template tag? =
 
-The template tag is 
+The template tag is
 
-<code>
+`
 if ( function_exists( 'ypf_show_video' ) ) {
 	echo ypf_show_video();
 }
-</code>
+`
 
 It accepts an array of parameters.
 
@@ -59,32 +58,23 @@ You can use these parameters:
 * headingEnd		- If you want to overwrite the default.
 
 Example:
-<code>
+`
 if ( function_exists( 'ypf_show_video' ) ) {
 	echo ypf_show_video( array( 'count' => 2, 'user_id' => 2 ) ); // 2 videos from user ID 2
 }
-</code>
-
+`
 
 = The video size is strange - What's wrong? =
-If you don't enter video sizes in the plugin options, it will use the width from 'Media' and calculate the height using the 16:9 aspect ratio.
-
-Here's some video sizes:
-
-* 480x295
-* 560x340
-* 640x385
-* 853x505
+If you don't enter video sizes in the plugin options, it will use the width from 'Media' and calculate the height using the 4:3 aspect ratio.
 
 = After upgrading to 2.0.2 my videos won't show anymore - What's wrong? =
-In 2.0.2 has the <code>show_video()</code> function been renamed to <code>ypf_show_video()</code> to prevent possible conflicts with other plugins/themes.
+In 2.0.2 has the `show_video()` function been renamed to `ypf_show_video()` to prevent possible conflicts with other plugins/themes.
 
-<code>
+`
 if ( function_exists( 'ypf_show_video' ) ) {
 	echo ypf_show_video();
 }
-</code>
-
+`
 
 == Screenshots ==
 
@@ -118,15 +108,15 @@ if ( function_exists( 'ypf_show_video' ) ) {
 * Uses the iframe embed by default (supports both HTML5 and Flash). Added option to use the old
 * Requires at least 3.1
 * Now removes the plugin options when you uninstall the plugin
-* If using the template tag, make sure to have <code>echo</code> in front of it.
+* If using the template tag, make sure to have `echo` in front of it.
 * A lot of bug fixes
 
 = 2.0.3 =
 * Shortcode bug fix
 
 = 2.0.2 =
-* <code>show_video()</code> has been renamed to <code>ypf_show_video()</code> - You'll have to update your template files if you use the template tag
-* <code>Fatal error: Call to undefined method WP_Error::get_item_quantity()</code> bug fixed
+* `show_video()` has been renamed to `ypf_show_video()` - You'll have to update your template files if you use the template tag
+* `Fatal error: Call to undefined method WP_Error::get_item_quantity()` bug fixed
 * Shortcode bug fix
 * Code clean up and other bug fixes
 * No more 2.8 support
@@ -167,7 +157,7 @@ Plugin completely rewriten
 Uses the iframe embed by default (supports both HTML5 and Flash). Added option to use the old
 Requires at least 3.1
 Now removes the plugin options when you uninstall the plugin
-If using the template tag, make sure to have <code>echo</code> in front of it.
+If using the template tag, make sure to have `echo` in front of it.
 A lot of bug fixes
 
 = 2.2.5 =

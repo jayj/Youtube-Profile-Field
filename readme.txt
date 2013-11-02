@@ -3,8 +3,9 @@ Contributors: Jayjdk
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XHKUSU26XBKEU
 Tags: youtube, video, rss, feed, profile, field, username, user, shortcode, oembed
 Requires at least: 3.1
-Tested up to: 3.6
-Stable tag: trunk
+Tested up to: 3.7.1
+Stable tag: 3.0.3
+License: GPLv2 or later
 
 Adds an additional field to the user profile page and allows you to show your videos on your website.
 

@@ -79,7 +79,7 @@ if ( function_exists( 'ypf_get_video' ) ) {
 
 = 3.1 =
 * Update to Youtube API v3 (the v2 API will stop working on April 20, 2015)
-* For 3.9 and later, use the native WordPress video player.
+* For WordPress 3.9 and later, use the native WordPress video player.
 * Fix minor bug with unsafe HTML not properly being removed in the plugin settings.
 * Width and height settings removed. Will default to the default embed width. For old users, their old settings will still work.
 * Major speed and stability improvements
@@ -175,5 +175,5 @@ Added `?wmode=transparent` to the iframe
 = 3.0 =
 A lot of bug fixes. The videos as embedded and cached using Oembed. Youtube API version 2.0.
 
-= 3.1.0 =
+= 3.1 =
 Major speed and stability improvements. Uses the native WordPress video player.

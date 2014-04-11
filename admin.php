@@ -1,9 +1,6 @@
 <?php
-
-add_action( 'admin_menu', 'ypf_add_options_page' );
-
 /**
- * Add the options page
+ * Adds the options page.
  *
  * @since 2.0.0
  */
@@ -17,8 +14,10 @@ function ypf_add_options_page() {
 	);
 }
 
+add_action( 'admin_menu', 'ypf_add_options_page' );
+
 /**
- * Display the options page.
+ * Displays the options page.
  *
  * @since 2.0.0
  */
@@ -26,7 +25,6 @@ function ypf_plugin_options() { ?>
 
 	<div class="wrap">
 
-		<?php screen_icon(); ?>
 		<h2><?php _e( 'Youtube Profile Field Options', 'youtube-profile-field' ); ?></h2>
 
 		<form action="options.php" method="post">
@@ -41,11 +39,11 @@ function ypf_plugin_options() { ?>
 }
 
 /**
- * Register the settings for the options page.
+ * Registers the settings for the options page.
  *
  * @since 2.0.0
  */
-function ypf_admin_init() {
+function ypf_register_settings_fields() {
 
 	register_setting( 'ypf_options', 'ypf_options', 'ypf_validate_options' );
 
@@ -58,15 +56,17 @@ function ypf_admin_init() {
 
 	add_settings_field(
 		'ypf_count',
-		__( 'Videos to show', 'youtube-profile-field' ),
+		__( 'Default video count', 'youtube-profile-field' ),
 		'ypf_setting_input_number',
 		'ypf_options',
 		'ypf_options_main'
 	);
 
+	// @todo Consider to add an option to disable using the native WordPress video style.
+
 	add_settings_field(
 		'ypf_heading_start',
-		__( 'Heading to titles', 'youtube-profile-field' ),
+		__( 'Before video title', 'youtube-profile-field' ),
 		'ypf_setting_input_heading_start',
 		'ypf_options',
 		'ypf_options_main'
@@ -74,145 +74,93 @@ function ypf_admin_init() {
 
 	add_settings_field(
 		'ypf_heading_end',
-		__( 'End heading', 'youtube-profile-field' ),
+		__( 'After video title', 'youtube-profile-field' ),
 		'ypf_setting_input_heading_end',
 		'ypf_options',
 		'ypf_options_main'
 	);
-
-	add_settings_field(
-		'ypf_width',
-		__( 'Width', 'youtube-profile-field' ),
-		'ypf_setting_input_width',
-		'ypf_options',
-		'ypf_options_main'
-	);
-
-	add_settings_field(
-		'ypf_height',
-		__( 'Height', 'youtube-profile-field' ),
-		'ypf_setting_input_height',
-		'ypf_options',
-		'ypf_options_main'
-	);
-
-	add_settings_section(
-		'ypf_options_help',
-		__( 'Help', 'youtube-profile-field' ),
-		'ypf_section_help',
-		'ypf_options'
-	);
 }
 
-add_action( 'admin_init', 'ypf_admin_init' );
+add_action( 'admin_init', 'ypf_register_settings_fields' );
 
 /**
- * Settings section
+ * Settings section.
  *
  * @since 2.0.0
  */
 function ypf_section_text() {
-	return;
+	$options     = get_option( 'ypf_options' );
+
+	// Add width and height as hidden fields
+	$width  = ( isset( $options['width'] ) )  ? $options['width']  : 0;
+	$height = ( isset( $options['height'] ) ) ? $options['height'] : 0;
+
+	echo "<input type='hidden' name='ypf_options[width]'  value='{$width}' /> ";
+	echo "<input type='hidden' name='ypf_options[height]' value='{$height}' /> ";
 }
 
 /**
- * "Videos to show" text field
+ * "Default video count" text field.
  *
  * @since 2.0.0
  */
 function ypf_setting_input_number() {
-	$options     = get_option( 'ypf_options' );
-	$text_string = $options['count'];
+	$options = get_option( 'ypf_options' );
+	$value   = $options['count'];
 
-	echo "<input type='number' id='ypf_count' name='ypf_options[count]' class='small-text' min='1' value='$text_string' /> ";
-	_e( 'Number of videos you want to show (Can be overriden with a template tag or shortcode)', 'youtube-profile-field' );
+	echo "<input type='number' id='ypf_count' name='ypf_options[count]' class='small-text' min='1' value='{$value}' /> ";
+
+	_e( 'Number of videos you want shown (can be overridden in the shortcode or template tag)', 'youtube-profile-field' );
 }
 
 /**
- * "Heading start" field
+ * "Before video title" field.
  *
  * @since 2.0.0
  */
 function ypf_setting_input_heading_start() {
-	$options     = get_option( 'ypf_options' );
-	$text_string = $options['headingStart'];
+	$options = get_option( 'ypf_options' );
+	$value   = $options['headingStart'];
 
-	echo "<input type='text' id='ypf_setting_input_heading_start' name='ypf_options[headingStart]' value='$text_string' /> ";
-	echo esc_html_e( '<h3>, <p> or something else. Leave empty to hide titles', 'youtube-profile-field' );
+	echo "<input type='text' id='ypf_setting_input_heading_start' name='ypf_options[headingStart]' value='{$value}' /> ";
+
+	esc_html_e( 'Text or HTML to show before the video title. Leave empty to hide the title.', 'youtube-profile-field' );
 }
 
 /**
- * "Heading end" field
+ * "After video title" field.
  *
  * @since 2.0.0
  */
 function ypf_setting_input_heading_end() {
-	$options     = get_option( 'ypf_options' );
-	$text_string = $options['headingEnd'];
+	$options = get_option( 'ypf_options' );
+	$value   = $options['headingEnd'];
 
-	echo "<input type='text' id='ypf_setting_input_heading_end' name='ypf_options[headingEnd]' value='$text_string' /> ";
-	echo esc_html_e( '</h3>, </p>' );
+	echo "<input type='text' id='ypf_setting_input_heading_end' name='ypf_options[headingEnd]' value='{$value}' /> ";
+
+	esc_html_e( 'Text or HTML to show after the video title.' );
 }
 
 /**
- * "Width" field
+ * Validates the user input
  *
- * @since 2.0.0
- */
-function ypf_setting_input_width() {
-	$options     = get_option( 'ypf_options' );
-	$text_string = ( isset( $options['width'] ) ) ? $options['width'] : 0;
-
-	echo "<input type='number' id='ypf_width' name='ypf_options[width]' class='small-text' value='$text_string' /> ";
-	_e( 'If left blank, or 0, the width of the videos will default to your media settings.', 'youtube-profile-field' );
-}
-
-/**
- * "Height" field
+ * @since  2.0.0
  *
- * @since 2.0.0
- */
-function ypf_setting_input_height() {
-	$options     = get_option( 'ypf_options' );
-	$text_string = ( isset( $options['height'] ) ) ? $options['height'] : 0;
-
-	echo "<input type='number' id='ypf_height' name='ypf_options[height]' class='small-text' value='$text_string' /> ";
-	_e( 'If left blank, or 0, the height of the videos will be calculated using the width', 'youtube-profile-field' );
-}
-
-/**
- * Validate user input
- *
- * @since 2.0.0
- * @param array $input The raw, untrusted input
- * @return array The validated input
+ * @param  array $input  The raw, untrusted input.
+ * @return array         The validated input.
  */
 function ypf_validate_options( $input ) {
+
+	// Make sure the numbers are integers.
 	$input['count']  = intval( $input['count'] );
 	$input['width']  = intval( $input['width'] );
 	$input['height'] = intval( $input['height'] );
 
-	$input['headingStart'] = wp_kses_data( esc_html( $input['headingStart'] ) );
-	$input['headingEnd'] = wp_kses_data( esc_html( $input['headingEnd'] ) );
+	// Sanitize inputs for untrusted HTML.
+	$input['headingStart'] = esc_html( wp_kses_post( $input['headingStart'] ) );
+	$input['headingEnd']   = esc_html( wp_kses_post( $input['headingEnd'] ) );
 
 	return $input;
-}
-
-/**
- * Help section
- *
- * @since 2.0.0
- */
-function ypf_section_help() {
-
-	echo '<h4>' . __( 'Helpful video sizes:', 'youtube-profile-field' ) . '</h4>';
-
-    echo '<ul style="list-style: inside square;">
-			<li>480x385</li>
-			<li>560x315</li>
-			<li>640x360</li>
-			<li>853x480</li>
-		</ul>';
 }
 
 ?>

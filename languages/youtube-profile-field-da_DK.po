@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Youtube Profile Field\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-02 22:02+0100\n"
+"POT-Creation-Date: 2014-04-11 21:43+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Jesper Johansen\n"
 "Language-Team: Jayjdk\n"
@@ -14,83 +14,91 @@ msgstr ""
 "X-Generator: Poedit 1.5.7\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: admin.php:12 admin.php:30
+#: admin.php:9 admin.php:28
 msgid "Youtube Profile Field Options"
 msgstr "Youtube Profile Field indstillinger"
 
-#: admin.php:13
+#: admin.php:10
 msgid "Youtube Profile Field"
 msgstr "Youtube Profile Field"
 
-#: admin.php:54 functions.php:260
+#: admin.php:52
 msgid "Settings"
 msgstr "Indstillinger"
 
-#: admin.php:61
-msgid "Videos to show"
-msgstr "Antal videoer der skal vises"
+#: admin.php:59
+msgid "Default video count"
+msgstr "Antal videoer"
 
 #: admin.php:69
-msgid "Heading to titles"
-msgstr "Overskrift til videoer"
+msgid "Before video title"
+msgstr "Før video titel"
 
 #: admin.php:77
-msgid "End heading"
-msgstr "Slut overskrift"
+msgid "After video title"
+msgstr "Efter video titel"
 
-#: admin.php:85
-msgid "Width"
-msgstr "Bredde"
-
-#: admin.php:93
-msgid "Height"
-msgstr "Højde"
-
-#: admin.php:101
-msgid "Help"
-msgstr "Hjælp"
-
-#: admin.php:128
+#: admin.php:113
 msgid ""
-"Number of videos you want to show (Can be overriden with a template tag or "
-"shortcode)"
+"Number of videos you want shown (can be overridden in the shortcode or "
+"template tag)"
 msgstr ""
-"Antal af videoer du vil vise (kan blive overskrevet med et template tag "
-"eller en shortcode)"
+"Antal videoer der skal vises (kan blive overskrevet med en shortcode eller "
+"et template tag)"
+
+#: admin.php:127
+msgid ""
+"Text or HTML to show before the video title. Leave empty to hide the title."
+msgstr ""
+"Tekst eller HTML der skal vises før video titlen. Efterlad tom for at fjerne "
+"titlen."
 
 #: admin.php:141
-msgid "<h3>, <p> or something else. Leave empty to hide titles"
-msgstr ""
-"<h3>, <p>, eller noget lignende. Efterlad den tom for at fjerne titlerne."
+msgid "Text or HTML to show after the video title."
+msgstr "Tekst eller HTML der skal vises after video titlen."
 
-#: admin.php:154
-msgid "</h3>, </p>"
-msgstr "</h3>, </p>"
+#: functions.php:70
+msgid "No videos found."
+msgstr "Ingen videoer fundet."
 
-#: admin.php:167
-msgid ""
-"If left blank, or 0, the width of the videos will default to your media "
-"settings."
-msgstr ""
-"Hvis tom, eller 0, vil bredden fra dine medie indstllinger blive brugt."
-
-#: admin.php:180
-msgid ""
-"If left blank, or 0, the height of the videos will be calculated using the "
-"width"
-msgstr "Hvis tom, 0, vil højden blive udregnet ved hjælp af bredden"
-
-#: admin.php:208
-msgid "Helpful video sizes:"
-msgstr "Hjælpsomme video størrelser:"
-
-#: functions.php:87
-msgid "Error: No video ID found."
-msgstr "Fejl: Ingen video ID fundet."
-
-#: functions.php:240
+#: functions.php:252
 msgid "Youtube username"
 msgstr "Youtube brugernavn"
+
+#~ msgid "Videos to show"
+#~ msgstr "Antal videoer der skal vises"
+
+#~ msgid "Heading to titles"
+#~ msgstr "Overskrift til videoer"
+
+#~ msgid "End heading"
+#~ msgstr "Slut overskrift"
+
+#~ msgid "Width"
+#~ msgstr "Bredde"
+
+#~ msgid "Height"
+#~ msgstr "Højde"
+
+#~ msgid "Help"
+#~ msgstr "Hjælp"
+
+#~ msgid "</h3>, </p>"
+#~ msgstr "</h3>, </p>"
+
+#~ msgid ""
+#~ "If left blank, or 0, the width of the videos will default to your media "
+#~ "settings."
+#~ msgstr ""
+#~ "Hvis tom, eller 0, vil bredden fra dine medie indstllinger blive brugt."
+
+#~ msgid ""
+#~ "If left blank, or 0, the height of the videos will be calculated using "
+#~ "the width"
+#~ msgstr "Hvis tom, 0, vil højden blive udregnet ved hjælp af bredden"
+
+#~ msgid "Helpful video sizes:"
+#~ msgstr "Hjælpsomme video størrelser:"
 
 #~ msgid "Use old embed code"
 #~ msgstr "Brug gammel embed kode"

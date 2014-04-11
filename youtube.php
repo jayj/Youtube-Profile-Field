@@ -13,6 +13,12 @@ function ypf_get_playlist_id( $user_id, $username ) {
 	// Get channel ID from Youtube.
 	$channel_id = ypf_get_channel_id( $username );
 
+	// No channel ID returned.
+	// Maybe the user has entered their channel ID as username
+	if ( ! $channel_id ) {
+		$channel_id = $username;
+	}
+
 	// Get playlist ID from Youtube.
 	$playlist_id = ypf_get_channel_upload_playlist( $channel_id );
 

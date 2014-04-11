@@ -5,7 +5,7 @@
  * Description: Automatically display your latest Youtube videos on your site.
  * Author: Jesper Johansen
  * Author URI: http://jayj.dk
- * Version: 3.1.0
+ * Version: 3.1
  * License: GPLv2 or later
  * Text Domain: youtube-profile-field
  * Domain Path: /languages

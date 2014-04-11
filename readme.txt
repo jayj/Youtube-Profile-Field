@@ -4,10 +4,10 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: youtube, video, rss, feed, profile, field, username, user, shortcode, oembed
 Requires at least: 3.6
 Tested up to: 3.9
-Stable tag: 3.1.0
+Stable tag: 3.1
 License: GPLv2 or later
 
-Automatically display your latest Youtube videos on your site. Comes with a shortcode to be used in posts and pages.
+Automatically display your latest Youtube videos on your site. Comes with the shortcode [youtube-user] to be used in posts and pages.
 
 == Description ==
 
@@ -32,9 +32,9 @@ The shortcode is: `&#91;youtube-user]`
 
 You can use these parameters:
 
-* count		- The number of videos you want to show. Ex: `&#91;youtube-user count="2"]`
-* user	    - The ID of the user you want to show videos from. Default is the post author. Ex: `&#91;youtube-user user="3"]`
-* width 	- If you want a different width than the default.
+* `count`     - The number of videos you want to show. You can use 'all' to show all that the Youtube feed contains. Defaults to the plugin setting. Ex: `&#91;youtube-user count="2"]`
+* `user`      - The ID of the user you want to show videos from. Default is the post author. Ex: `&#91;youtube-user user="3"]`
+* `width`     - If you want a different width than the default.
 
 = How do I use the template tag? =
 
@@ -43,7 +43,7 @@ You can use one of the following templates tags:
 `
 // Return the videos
 if ( function_exists( 'ypf_get_video' ) ) {
-	ypf_get_video();
+	echo ypf_get_video();
 }
 
 // Echo the videos
@@ -57,11 +57,11 @@ Both accepts the same array of parameters.
 
 You can use these parameters:
 
-* user_id       - The ID of the user you want to show videos from. Required.
-* count         - The number of videos you want to show. You can use 'all' to show all that the Youtube feed contains. Defaults to the plugin setting.
-* width         - If you want a different width than the default.
-* headingStart  - Text or HTML before the video title. Defaults to the plugin setting.
-* headingEnd    - Text or HTML after the video title. Defaults to the plugin setting.
+* `user_id`       - The ID of the user you want to show videos from. Required outside the loop.
+* `count`         - The number of videos you want to show. You can use 'all' to show all that the Youtube feed contains. Defaults to the plugin setting.
+* `width`         - If you want a different width than the default.
+* `headingStart`  - Text or HTML before the video title. Defaults to the plugin setting.
+* `headingEnd`    - Text or HTML after the video title. Defaults to the plugin setting.
 
 Example:
 `
@@ -77,11 +77,11 @@ if ( function_exists( 'ypf_get_video' ) ) {
 
 == Changelog ==
 
-= 3.1.0 =
+= 3.1 =
 * Update to Youtube API v3 (the v2 API will stop working on April 20, 2015)
 * For 3.9 and later, use the native WordPress video player.
 * Fix minor bug with unsafe HTML not properly being removed in the plugin settings.
-* Width and height settings removed. Will use to the default embed video. For old users, their old settings will still work.
+* Width and height settings removed. Will default to the default embed width. For old users, their old settings will still work.
 * Major speed and stability improvements
 * Minor bug fixes
 * Tested with WordPress 3.9
@@ -175,4 +175,5 @@ Added `?wmode=transparent` to the iframe
 = 3.0 =
 A lot of bug fixes. The videos as embedded and cached using Oembed. Youtube API version 2.0.
 
-= Major speed and stability improvements. Use the native WordPress video player.
+= 3.1.0 =
+Major speed and stability improvements. Uses the native WordPress video player.

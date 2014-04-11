@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Youtube Profile Field\n"
-"POT-Creation-Date: 2013-11-02 22:02+0100\n"
+"POT-Creation-Date: 2014-04-11 21:43+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Jesper Johansen\n"
 "Language-Team: \n"
@@ -16,76 +16,49 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin.php:12 admin.php:30
+#: admin.php:9 admin.php:28
 msgid "Youtube Profile Field Options"
 msgstr ""
 
-#: admin.php:13
+#: admin.php:10
 msgid "Youtube Profile Field"
 msgstr ""
 
-#: admin.php:54 functions.php:260
+#: admin.php:52
 msgid "Settings"
 msgstr ""
 
-#: admin.php:61
-msgid "Videos to show"
+#: admin.php:59
+msgid "Default video count"
 msgstr ""
 
 #: admin.php:69
-msgid "Heading to titles"
+msgid "Before video title"
 msgstr ""
 
 #: admin.php:77
-msgid "End heading"
+msgid "After video title"
 msgstr ""
 
-#: admin.php:85
-msgid "Width"
-msgstr ""
-
-#: admin.php:93
-msgid "Height"
-msgstr ""
-
-#: admin.php:101
-msgid "Help"
-msgstr ""
-
-#: admin.php:128
+#: admin.php:113
 msgid ""
-"Number of videos you want to show (Can be overriden with a template tag or "
-"shortcode)"
+"Number of videos you want shown (can be overridden in the shortcode or "
+"template tag)"
+msgstr ""
+
+#: admin.php:127
+msgid ""
+"Text or HTML to show before the video title. Leave empty to hide the title."
 msgstr ""
 
 #: admin.php:141
-msgid "<h3>, <p> or something else. Leave empty to hide titles"
+msgid "Text or HTML to show after the video title."
 msgstr ""
 
-#: admin.php:154
-msgid "</h3>, </p>"
+#: functions.php:70
+msgid "No videos found."
 msgstr ""
 
-#: admin.php:167
-msgid ""
-"If left blank, or 0, the width of the videos will default to your media "
-"settings."
-msgstr ""
-
-#: admin.php:180
-msgid ""
-"If left blank, or 0, the height of the videos will be calculated using the "
-"width"
-msgstr ""
-
-#: admin.php:208
-msgid "Helpful video sizes:"
-msgstr ""
-
-#: functions.php:87
-msgid "Error: No video ID found."
-msgstr ""
-
-#: functions.php:240
+#: functions.php:252
 msgid "Youtube username"
 msgstr ""

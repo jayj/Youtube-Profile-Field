@@ -78,7 +78,7 @@ If you don't want that and use the default Youtube video player instead, you can
 
 ```php
 add_filter( 'youtube_profile_field_use_native_player', '__return_false' );
-``
+```
 
 ## Screenshots ##
 
@@ -95,9 +95,10 @@ add_filter( 'youtube_profile_field_use_native_player', '__return_false' );
 
 ### 3.1 ###
 * Update to Youtube API v3 (the v2 API will stop working on April 20, 2015)
-* For WordPress 3.9 and later, use the native WordPress video player.
-* Fix minor bug with unsafe HTML not properly being removed in the plugin settings.
-* Width and height settings removed. Will default to the default embed width. For old users, their old settings will still work.
+* For WordPress 3.9 and later, use the native WordPress video player
+* Channel ID can be used as username
+* Fix minor bug with unsafe HTML not properly being removed in the plugin settings
+* Width and height settings removed. Will default to the default embed width. For old users, their old settings will still work
 * Major speed and stability improvements
 * Minor bug fixes
 * Tested with WordPress 3.9

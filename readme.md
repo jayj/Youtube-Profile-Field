@@ -70,6 +70,16 @@ if ( function_exists( 'ypf_get_video' ) ) {
 }
 ```
 
+### Can I change back to the Youtube video player? ###
+
+WordPress 3.9 and later uses the native WordPress video player to play your Youtube videos.
+
+If you don't want that and use the default Youtube video player instead, you can use this line in a plugin or theme:
+
+```php
+add_filter( 'youtube_profile_field_use_native_player', '__return_false' );
+``
+
 ## Screenshots ##
 
 ###1. A page with videos###

@@ -70,6 +70,16 @@ if ( function_exists( 'ypf_get_video' ) ) {
 }
 `
 
+= Can I change back to the Youtube video player? =
+
+WordPress 3.9 and later uses the native WordPress video player to play your Youtube videos.
+
+If you don't want that and use the default Youtube video player instead, you can use this line in a plugin or theme:
+
+`
+add_filter( 'youtube_profile_field_use_native_player', '__return_false' );
+`
+
 == Screenshots ==
 
 1. A page with videos
@@ -79,9 +89,10 @@ if ( function_exists( 'ypf_get_video' ) ) {
 
 = 3.1 =
 * Update to Youtube API v3 (the v2 API will stop working on April 20, 2015)
-* For WordPress 3.9 and later, use the native WordPress video player.
-* Fix minor bug with unsafe HTML not properly being removed in the plugin settings.
-* Width and height settings removed. Will default to the default embed width. For old users, their old settings will still work.
+* WordPress 3.9 and later: use the native WordPress video player
+* Channel ID can be used as username
+* Fix minor bug with unsafe HTML not properly being removed in the plugin settings
+* Width and height settings removed. Will default to the default embed width. For old users, their old settings will still work
 * Major speed and stability improvements
 * Minor bug fixes
 * Tested with WordPress 3.9

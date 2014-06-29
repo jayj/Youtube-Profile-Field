@@ -79,6 +79,15 @@ function ypf_get_video( $args = array() ) {
 	$headingStart = html_entity_decode( $options['headingStart'] );
 	$headingEnd   = html_entity_decode( $options['headingEnd'] );
 
+	/**
+	 * Filter the default video wrapper class.
+	 *
+	 * @since 3.1.1
+	 *
+	 * @param array $class The default classes.
+	 */
+	$class = apply_filters( 'youtube_profile_field_wrapper_class', array( 'youtube-video' ), count( $videos ) );
+
 	ob_start();
 
 	// Loop through each video.
@@ -89,7 +98,7 @@ function ypf_get_video( $args = array() ) {
 		$id    = $video->contentDetails->videoId;
 		$url   = "https://www.youtube.com/watch?v={$id}";
 	?>
-		<div class="youtube-video">
+		<div class="<?php echo esc_attr( join( ' ', $class ) ); ?>">
 			<?php
 				// Display the video title.
 				if ( ! empty( $headingStart ) ) {
@@ -107,8 +116,8 @@ function ypf_get_video( $args = array() ) {
 				if ( function_exists( 'wp_playlist_shortcode' ) && apply_filters( 'youtube_profile_field_use_native_player', true ) ) {
 
 					echo wp_video_shortcode( array(
-						'src' => $url,
-						'width' => $options['width'],
+						'src'    => $url,
+						'width'  => $options['width'],
 						'height' => $options['height'] // Not used by the [video] shortcode
 					));
 
@@ -233,10 +242,10 @@ function ypf_get_video_width() {
 function ypf_get_video_height( $width ) {
 	/**
 	 * Filter the default video aspect video.
-     *
+	 *
 	 * @since 3.1.0
 	 *
-	 * @param type $ratio The default 4:3 aspect ratio.
+	 * @param string|int $ratio The default 4:3 aspect ratio.
 	 */
 	$aspect_ratio = apply_filters( 'youtube_profile_field_aspect_ratio', 4/3 );
 

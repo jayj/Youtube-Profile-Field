@@ -85,6 +85,7 @@ function ypf_get_video( $args = array() ) {
 	 * @since 3.1.1
 	 *
 	 * @param array $class The default classes.
+	 * @param int   $count The total number of videos shown.
 	 */
 	$class = apply_filters( 'youtube_profile_field_wrapper_class', array( 'youtube-video' ), count( $videos ) );
 

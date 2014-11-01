@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: youtube, video, rss, feed, profile, field, username, user, shortcode, oembed
 Requires at least: 3.6
 Tested up to: 3.9
-Stable tag: 3.1
+Stable tag: 3.1.1
 License: GPLv2 or later
 
 Automatically display your latest Youtube videos on your site. Comes with the shortcode [youtube-user] to be used in posts and pages.
@@ -86,6 +86,13 @@ add_filter( 'youtube_profile_field_use_native_player', '__return_false' );
 2. The profile page with the Youtube username field
 
 == Changelog ==
+
+= 3.1.1 =
+
+* Bugfix: Fix broken video player in Firefox and Safari
+
+The native WordPress video player is broken for some Firefox and Safari users.
+This version uses oEmbed until [#29223](https://core.trac.wordpress.org/ticket/29223) is fixed.
 
 = 3.1 =
 * Update to Youtube API v3 (the v2 API will stop working on April 20, 2015)

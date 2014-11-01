@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Youtube Profile Field\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-11 21:43+0100\n"
+"POT-Creation-Date: 2014-11-01 21:13+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Jesper Johansen\n"
 "Language-Team: Jayjdk\n"
@@ -61,7 +61,7 @@ msgstr "Tekst eller HTML der skal vises after video titlen."
 msgid "No videos found."
 msgstr "Ingen videoer fundet."
 
-#: functions.php:252
+#: functions.php:268
 msgid "Youtube username"
 msgstr "Youtube brugernavn"
 

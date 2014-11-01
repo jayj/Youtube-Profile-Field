@@ -3,7 +3,7 @@
 **Donate link:** https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XHKUSU26XBKEU  
 **Tags:** youtube, video, rss, feed, profile, field, username, user, shortcode, oembed  
 **Requires at least:** 3.6  
-**Tested up to:** 3.9  
+**Tested up to:** 4.1-alpha  
 **Stable tag:** 3.1.1  
 **License:** GPLv2 or later  
 

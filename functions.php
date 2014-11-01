@@ -113,8 +113,14 @@ function ypf_get_video( $args = array() ) {
 			?>
 
 			<?php
-				// Display the video with the [video] shortcode for 3.9 or later.
-				if ( function_exists( 'wp_playlist_shortcode' ) && apply_filters( 'youtube_profile_field_use_native_player', true ) ) {
+				/**
+				 * Display the video with the [video] shortcode for 3.9 or later.
+				 *
+				 * Turned off since v3.1.1 until #29223 is fixed
+				 * (Video Shortcode with Youtube source broken in some browsers)
+				 * https://core.trac.wordpress.org/ticket/29223
+				 */
+				if ( function_exists( 'wp_playlist_shortcode' ) && apply_filters( 'youtube_profile_field_use_native_player', false ) ) {
 
 					echo wp_video_shortcode( array(
 						'src'    => $url,

@@ -25,7 +25,7 @@ function ypf_plugin_options() { ?>
 
 	<div class="wrap">
 
-		<h2><?php _e( 'Youtube Profile Field Options', 'youtube-profile-field' ); ?></h2>
+		<h1><?php _e( 'Youtube Profile Field Options', 'youtube-profile-field' ); ?></h1>
 
 		<form action="options.php" method="post">
 			<?php settings_fields( 'ypf_options' ); ?>

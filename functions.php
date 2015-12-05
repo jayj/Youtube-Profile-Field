@@ -5,7 +5,7 @@
  * @since 2.1.0
  *
  * @param array $args {
- *     An array of arguments. Required.
+ *     An array of arguments. Optional.
  *
  *     @type int $user_id          The user ID. Required outside the loop.
  *     @type int $count            Videos to be shown. Optional. Will default to
@@ -172,7 +172,7 @@ function ypf_show_video( $args = array() ) {
  * The [youtube-user] shortcode.
  *
  * @param array $args {
- *     An array of arguments. Required.
+ *     An array of arguments. Optional.
  *
  *     @type int $user_id          The user ID. Required.
  *     @type int $count            Videos to be shown. Optional. Will default to

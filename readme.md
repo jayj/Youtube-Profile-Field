@@ -15,16 +15,26 @@ Youtube Profile Field allows you to automatically show your latest Youtube video
 
 Show your videos in your posts, pages, and text widgets using a shortcode, or in your theme files using the template tag.
 
-For WordPress 3.9 or later the videos will be displayed using the native WordPress video player and your theme styles.
+So, how is this different from the Youtube oEmbed feature that's already in WordPress?
+
+The built-in feature is awesome if you want to show a specific video. But what if you always want to show your latest video?  Or 3 latest videos? You could manually update them each you upload a new video, or you could use this plugin to take care of it for you.
 
 ## Installation ##
 
 1. Install the plugin either via the WordPress.org plugin directory, or by uploading the files to your `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Go to `Users > Your Profile` and enter your Youtube username in the field called "Youtube username" under "Contact Info"
+3. Go to `Users > Your Profile` and enter your Youtube username (or channel ID) in the field called "Youtube username" under "Contact Info"
 4. **Optional:** Go to the settings page `Settings > Youtube Profile Field` and change the settings to fit you.  
 
+
+If you need help finding your channel ID, [here's an article from the Youtube help section](https://support.google.com/youtube/answer/3250431?hl=en)
+
 ## Frequently Asked Questions ##
+
+### So, how is this different from the Youtube oEmbed feature that's already in WordPress?
+
+The built-in feature is awesome if you want to show a specific video. But what if you always want to show your latest video?  Or 3 latest videos? You could manually update them each you upload a new video, or you could use this plugin to take care of it for you.
+
 
 ### How do I use the shortcode? ###
 
@@ -70,14 +80,14 @@ if ( function_exists( 'ypf_get_video' ) ) {
 }
 ```
 
-### Can I change back to the Youtube video player? ###
+### Can I use the native WordPress HTML5 player? =
 
-WordPress 3.9 and later uses the native WordPress video player to play your Youtube videos.
+Yes, you can use the native WordPress video player added in WordPress 3.9 to play your Youtube videos.
 
-If you don't want that and use the default Youtube video player instead, you can use this line in a plugin or theme:
+The option has been disabled because of issues playing the videos in Safari and Firefox. But if you still want to, you can use this line in a plugin or theme:
 
 ```php
-add_filter( 'youtube_profile_field_use_native_player', '__return_false' );
+add_filter( 'youtube_profile_field_use_native_player', '__return_true' );
 ```
 
 ## Screenshots ##
